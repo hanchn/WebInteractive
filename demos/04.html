@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- HTML -->
+<div class="typewriter">
+    <span class="text">你好，欢迎来到我的网站</span>
+  </div>
+<style>
+    /* CSS */
+.typewriter {
+  font-family: 'Courier New', monospace;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #00f0ff; /* 光标线 */
+  width: 0;
+  animation: typing 4s steps(16) forwards, blink-caret 0.7s step-end infinite;
+}
+
+.text {
+  display: inline-block;
+}
+
+/* 打字动画 */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 16ch;
+  }
+}
+
+/* 光标闪烁动画 */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #00f0ff;
+  }
+}
+
+</style>  
+</body>
+</html>

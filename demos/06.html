@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- HTML -->
+<div class="glow-button-wrapper">
+    <button class="glow-button">开始体验</button>
+  </div>
+<style>
+    /* 基础样式 */
+.glow-button-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.glow-button {
+  position: relative;
+  z-index: 1;
+  background: #111;
+  color: white;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+/* 鼠标悬停放大 */
+.glow-button:hover {
+  transform: scale(1.05);
+}
+
+/* 伪元素发光边框动画 */
+.glow-button-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  background: linear-gradient(270deg, #0ff, #f0f, #0ff);
+  background-size: 600% 600%;
+  border-radius: 14px;
+  filter: blur(5px);
+  z-index: 0;
+  animation: glowFlow 3s linear infinite;
+}
+
+/* 边框流动动画 */
+@keyframes glowFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+</style>  
+</body>
+</html>

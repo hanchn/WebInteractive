@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- HTML -->
+<div class="card">
+    <img src="https://picsum.photos/400/250" alt="示例图片" class="card-img" />
+    <div class="card-content">
+      <h3>卡片标题</h3>
+      <p>这是一些简短的描述文本。</p>
+    </div>
+  </div>
+<style>
+    /* CSS */
+.card {
+  width: 400px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.card-img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img {
+  transform: translateY(-10px);
+}
+
+.card-content {
+  padding: 1rem;
+  text-align: left;
+}
+
+</style>  
+</body>
+</html>
