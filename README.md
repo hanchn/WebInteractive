@@ -4,3 +4,4 @@
 [打字机文字动画](./demos/04.html)
 [悬浮卡片效果](./demos/05.html)
 [发光边框动画按钮](./demos/06.html)
+[HTML + CSS 实现玻璃拟态卡片 + 渐变背景](./demos/07.html)

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- HTML -->
+<div class="glass-wrapper">
+    <div class="glass-card">
+      <h2>欢迎回来</h2>
+      <p>请输入你的账户信息开始体验。</p>
+    </div>
+  </div>
+<style>
+    /* 背景容器 */
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+.glass-wrapper {
+  height: 100vh;
+  background: linear-gradient(120deg, #ff7e5f, #5f86ff, #9b59b6);
+  background-size: 300% 300%;
+  animation: moveGradient 10s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 动态背景动画 */
+@keyframes moveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 玻璃拟态卡片 */
+.glass-card {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: white;
+  text-align: center;
+  max-width: 400px;
+}
+
+</style>  
+</body>
+</html>
