@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- HTML -->
+    <div class="custom-select">
+      <div class="select-trigger">请选择分类</div>
+      <ul class="select-options">
+        <li>产品</li>
+        <li>博客</li>
+        <li>关于我们</li>
+      </ul>
+    </div>
+    <style>
+      body {
+        padding: 200px;
+      }
+      /* 容器 */
+      .custom-select {
+        position: relative;
+        width: 200px;
+        font-family: sans-serif;
+        user-select: none;
+      }
+
+      /* 触发器样式 */
+      .select-trigger {
+        background: #ffffff;
+        padding: 0.8em 1em;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        position: relative;
+      }
+
+      /* 自绘箭头 */
+      .select-trigger::after {
+        content: "";
+        position: absolute;
+        right: 1em;
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+        border: solid #666;
+        border-width: 0 2px 2px 0;
+        padding: 5px;
+        pointer-events: none;
+        transition: transform 0.3s ease;
+      }
+
+      /* 激活时箭头旋转 */
+      .custom-select.open .select-trigger::after {
+        transform: translateY(-50%) rotate(-135deg);
+      }
+
+      /* 下拉列表 */
+      .select-options {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin-top: 5px;
+        background: white;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        z-index: 10;
+      }
+
+      /* 展开动画状态 */
+      .custom-select.open .select-options {
+        max-height: 500px;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* 每项样式 */
+      .select-options li {
+        padding: 0.8em 1em;
+        cursor: pointer;
+      }
+      .select-options li:hover {
+        font-weight: bold;
+      }
+    </style>
+    <script>
+      // JS 简版，用于切换菜单状态
+      document
+        .querySelector(".select-trigger")
+        .addEventListener("click", function () {
+          this.parentElement.classList.toggle("open");
+        });
+    </script>
+  </body>
+</html>
