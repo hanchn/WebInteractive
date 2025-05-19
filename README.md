@@ -10,3 +10,4 @@
 [交互式评分组件](./demos/10.html)
 [自定义开关按钮 Toggle](./demos/11.html)
 [模态弹窗组件](./demos/12.html)
+[点赞按钮动画反馈](./demos/13.html)

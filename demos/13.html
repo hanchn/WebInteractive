@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- HTML -->
+<button class="like-button">
+    <span class="icon">👍</span>
+  </button>
+<style>
+    /* CSS */
+.like-button {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.like-button.active .icon {
+  color: #ff5252;
+  text-shadow: 0 0 10px #ff8a80;
+}
+
+.like-button:active {
+  transform: scale(1.2);
+}
+
+</style>  
+<script>
+    // JS 点赞切换
+const likeBtn = document.querySelector('.like-button');
+likeBtn.addEventListener('click', () => {
+  likeBtn.classList.toggle('active');
+});
+
+</script>
+</body>
+</html>
