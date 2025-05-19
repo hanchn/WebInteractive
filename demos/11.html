@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- HTML -->
+    <div class="toggle-switch" id="myToggle">
+      <span class="toggle-thumb"></span>
+    </div>
+    <style>
+      body {
+        padding: 200px;
+      }
+      /* 外壳轨道 */
+      .toggle-switch {
+        width: 60px;
+        height: 30px;
+        background-color: #ccc;
+        border-radius: 30px;
+        position: relative;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      /* 滑动球 */
+      .toggle-thumb {
+        width: 26px;
+        height: 26px;
+        background: #fff;
+        border-radius: 50%;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        transition: transform 0.3s ease;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      }
+
+      /* 激活状态 */
+      .toggle-switch.active {
+        background-color: #4cd964;
+      }
+
+      .toggle-switch.active .toggle-thumb {
+        transform: translateX(30px);
+      }
+    </style>
+    <script>
+      // JS 控制 toggle 状态切换
+      const toggle = document.getElementById("myToggle");
+
+      toggle.addEventListener("click", () => {
+        toggle.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>

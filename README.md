@@ -6,3 +6,7 @@
 [发光边框动画按钮](./demos/06.html)
 [HTML + CSS 实现玻璃拟态卡片 + 渐变背景](./demos/07.html)
 [HTML + CSS 实现下拉菜单](./demos/08.html)
+[响应式 Tabs 切换组件](./demos/09.html)
+[交互式评分组件](./demos/10.html)
+[自定义开关按钮 Toggle](./demos/11.html)
+[模态弹窗组件](./demos/12.html)

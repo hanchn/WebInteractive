@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- HTML -->
+    <div class="tabs-wrapper">
+      <div class="tabs">
+        <div class="tab active">推荐</div>
+        <div class="tab">产品</div>
+        <div class="tab">教程</div>
+        <div class="tab">关于我们</div>
+        <div class="tab-underline"></div>
+      </div>
+    </div>
+    <style>
+      body {
+        padding: 200px;
+      }
+      /* 外层包裹 */
+      .tabs-wrapper {
+        max-width: 100%;
+        overflow-x: auto;
+        padding: 1rem;
+        background: #fff;
+      }
+
+      /* tab 容器 */
+      .tabs {
+        display: flex;
+        position: relative;
+        gap: 2rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #eee;
+      }
+
+      /* 单个 tab 项 */
+      .tab {
+        font-size: 1.1rem;
+        padding: 0.5rem 0;
+        cursor: pointer;
+        position: relative;
+        white-space: nowrap;
+        transition: color 0.3s ease;
+      }
+
+      /* 激活项文字渐变效果 */
+      .tab.active {
+        background: linear-gradient(90deg, #ff7e5f, #feb47b);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* 滑动高亮条 */
+      .tab-underline {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(to right, #ff7e5f, #feb47b);
+        border-radius: 10px;
+        transition: transform 0.3s ease, width 0.3s ease;
+        pointer-events: none;
+      }
+    </style>
+    <script>
+      const tabs = document.querySelectorAll(".tab");
+      const underline = document.querySelector(".tab-underline");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          document.querySelector(".tab.active")?.classList.remove("active");
+          tab.classList.add("active");
+
+          const offsetLeft = tab.offsetLeft;
+          const width = tab.offsetWidth;
+
+          underline.style.transform = `translateX(${offsetLeft}px)`;
+          underline.style.width = `${width}px`;
+        });
+      });
+
+      // 初始化高亮条位置
+      window.addEventListener("load", () => {
+        const activeTab = document.querySelector(".tab.active");
+        const underline = document.querySelector(".tab-underline");
+        underline.style.transform = `translateX(${activeTab.offsetLeft}px)`;
+        underline.style.width = `${activeTab.offsetWidth}px`;
+      });
+    </script>
+  </body>
+</html>

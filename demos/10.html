@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- HTML -->
+    <div class="rating">
+      <span data-value="1">★</span>
+      <span data-value="2">★</span>
+      <span data-value="3">★</span>
+      <span data-value="4">★</span>
+      <span data-value="5">★</span>
+    </div>
+    <style>
+      /* CSS */
+      body {
+        padding: 200px;
+      }
+      .rating {
+        font-size: 2rem;
+        color: #ccc;
+        cursor: pointer;
+        display: inline-block;
+      }
+
+      .rating span {
+        transition: transform 0.2s ease, color 0.3s;
+      }
+
+      .rating span:hover {
+        transform: scale(1.2);
+      }
+
+      .rating span.active {
+        color: gold;
+      }
+    </style>
+    <script>
+      // JS：评分逻辑
+      const stars = document.querySelectorAll(".rating span");
+      let currentRating = 0;
+
+      stars.forEach((star) => {
+        star.addEventListener("mouseover", () => {
+          const val = parseInt(star.dataset.value);
+          highlightStars(val);
+        });
+
+        star.addEventListener("click", () => {
+          currentRating = parseInt(star.dataset.value);
+          highlightStars(currentRating);
+        });
+
+        star.addEventListener("mouseleave", () => {
+          highlightStars(currentRating);
+        });
+      });
+
+      function highlightStars(rating) {
+        stars.forEach((s) => {
+          s.classList.toggle("active", parseInt(s.dataset.value) <= rating);
+        });
+      }
+    </script>
+  </body>
+</html>
