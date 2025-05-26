@@ -11,3 +11,7 @@
 [自定义开关按钮 Toggle](./demos/11.html)
 [模态弹窗组件](./demos/12.html)
 [点赞按钮动画反馈](./demos/13.html)
+[横向滑动组件 + 拖动 + 进度条](./demos/14.html)
+[侧边栏菜单导航](./demos/15.html)
+[登录 / 注册页面动效](./demos/16.html)
+[404 创意页面设计](./demos/17.html)

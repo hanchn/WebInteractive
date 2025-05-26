@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="error-page">
+      <h1 class="error-code">404</h1>
+      <p class="error-message">Oops！你似乎迷失在太空中了…</p>
+      <button class="return-btn">返回地球</button>
+
+      <!-- 太空元素 -->
+      <div class="astronaut"></div>
+      <div class="planet"></div>
+    </div>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /* 页面整体布局 */
+      .error-page {
+        height: 100vh;
+        background: radial-gradient(#000428, #004e92);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        color: white;
+        overflow: hidden;
+        text-align: center;
+        font-family: "Orbitron", sans-serif;
+      }
+
+      /* 404大号文字 */
+      .error-code {
+        font-size: 8rem;
+        margin: 0;
+        animation: flicker 1.5s infinite alternate;
+      }
+
+      /* 错误描述 */
+      .error-message {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      /* 返回按钮 */
+      .return-btn {
+        padding: 1em 2em;
+        font-size: 1rem;
+        background: linear-gradient(45deg, #00f2fe, #4facfe);
+        border: none;
+        border-radius: 40px;
+        color: white;
+        cursor: pointer;
+        animation: floatUp 3s ease-in-out infinite;
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+      }
+
+      /* 太空人 */
+      .astronaut {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        background: url("https://i.imgur.com/7ybJ1DN.png") no-repeat
+          center/contain;
+        top: 20%;
+        left: 10%;
+        animation: floatAstronaut 4s ease-in-out infinite;
+      }
+
+      /* 星球 */
+      .planet {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background: url("https://i.imgur.com/zVBTZ5z.png") no-repeat
+          center/contain;
+        bottom: 10%;
+        right: 10%;
+        animation: rotatePlanet 20s linear infinite;
+      }
+      @keyframes flicker {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.7;
+          transform: scale(1.02);
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes floatUp {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      @keyframes floatAstronaut {
+        0%,
+        100% {
+          transform: translateY(0) rotate(-5deg);
+        }
+        50% {
+          transform: translateY(-10px) rotate(5deg);
+        }
+      }
+
+      @keyframes rotatePlanet {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </body>
+</html>

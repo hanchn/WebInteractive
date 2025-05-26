@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- checkbox 控制展开收起 -->
+    <input type="checkbox" id="sidebar-toggle" hidden />
+    <label for="sidebar-toggle" class="sidebar-toggle-btn">☰</label>
+
+    <aside class="sidebar">
+      <nav class="menu">
+        <a href="#">仪表盘</a>
+        <a href="#">用户管理</a>
+        <a href="#">订单列表</a>
+        <a href="#">设置</a>
+      </nav>
+    </aside>
+    <style>
+      /* 收起按钮样式 */
+      .sidebar-toggle-btn {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      /* 侧边栏基本样式 */
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 220px;
+        height: 100vh;
+        background: #2c3e50;
+        color: white;
+        padding-top: 3rem;
+        transition: width 0.3s ease;
+        overflow: hidden;
+        z-index: 1000;
+      }
+
+      .sidebar .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 1rem;
+      }
+
+      .sidebar .menu a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: opacity 0.3s;
+      }
+
+      /* 收起状态（当 checkbox 被选中时） */
+      #sidebar-toggle:checked ~ .sidebar {
+        width: 60px;
+      }
+
+      #sidebar-toggle:checked ~ .sidebar .menu a {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </body>
+</html>
