@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="magnet-wrapper">
+      <button class="magnet-btn">立即探索</button>
+    </div>
+    <style>
+      .magnet-wrapper {
+        display: inline-block;
+        perspective: 1000px;
+        position: relative;
+      }
+
+      .magnet-btn {
+        padding: 1em 2em;
+        font-size: 1.2rem;
+        border-radius: 12px;
+        background: linear-gradient(to right, #00f2fe, #4facfe);
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.2s ease-out;
+        will-change: transform;
+      }
+    </style>
+    <script>
+      const wrapper = document.querySelector(".magnet-wrapper");
+      const button = wrapper.querySelector(".magnet-btn");
+
+      wrapper.addEventListener("mousemove", (e) => {
+        const rect = wrapper.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        button.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+      });
+
+      wrapper.addEventListener("mouseleave", () => {
+        button.style.transform = "translate(0, 0)";
+      });
+    </script>
+  </body>
+</html>

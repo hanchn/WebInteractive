@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="typewriter">
+      <span class="text">探索未知的宇宙</span>
+    </div>
+    <style>
+      /* 容器设置打字区域 */
+      .typewriter {
+        width: 22ch; /* 控制字符长度 */
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid #00f2fe; /* 模拟光标 */
+        font-size: 2rem;
+        font-family: monospace;
+        animation: typing 2s steps(22), deleting 2s steps(22) 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+
+      /* 闪烁光标 */
+      @keyframes blink {
+        0%,
+        100% {
+          border-color: transparent;
+        }
+        50% {
+          border-color: #00f2fe;
+        }
+      }
+
+      /* 打字动画 */
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 22ch;
+        }
+      }
+
+      /* 删除动画 */
+      @keyframes deleting {
+        from {
+          width: 22ch;
+        }
+        to {
+          width: 0;
+        }
+      }
+    </style>
+  </body>
+</html>

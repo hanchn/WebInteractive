@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="radar">
+      <span class="wave"></span>
+      <span class="wave"></span>
+      <span class="wave"></span>
+    </div>
+    <style>
+      .radar {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: #00f2fe22;
+        margin: 100px auto;
+      }
+
+      .wave {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: rgba(0, 242, 254, 0.4);
+        transform: translate(-50%, -50%) scale(0.2);
+        animation: radarWave 2s infinite ease-out;
+      }
+
+      /* 三个波纹延迟触发 */
+      .wave:nth-child(2) {
+        animation-delay: 0.5s;
+      }
+      .wave:nth-child(3) {
+        animation-delay: 1s;
+      }
+
+      @keyframes radarWave {
+        0% {
+          transform: translate(-50%, -50%) scale(0.2);
+          opacity: 0.8;
+        }
+        100% {
+          transform: translate(-50%, -50%) scale(1.5);
+          opacity: 0;
+        }
+      }
+    </style>
+  </body>
+</html>

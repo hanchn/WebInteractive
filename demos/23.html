@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="glow-button">启动引擎</button>
+    <style>
+      .glow-button {
+        position: relative;
+        padding: 1em 2em;
+        font-size: 1.2rem;
+        color: white;
+        background: transparent;
+        border: 2px solid transparent;
+        border-radius: 12px;
+        cursor: pointer;
+        z-index: 1;
+      }
+
+      /* 发光动画边框 */
+      .glow-button::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 12px;
+        padding: 2px;
+        background: linear-gradient(270deg, #0ff, #f0f, #0ff);
+        background-size: 400% 400%;
+        animation: glow-border 5s linear infinite;
+        -webkit-mask: linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        z-index: -1;
+      }
+
+      /* 边框流光动画 */
+      @keyframes glow-border {
+        0% {
+          background-position: 0% 50%;
+        }
+        100% {
+          background-position: 100% 50%;
+        }
+      }
+    </style>
+  </body>
+</html>

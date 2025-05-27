@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- HTML -->
+    <h1 class="shine-text">探索你的想象力</h1>
+    <style>
+      body {
+        padding: 200px;
+      }
+      /* CSS */
+      .shine-text {
+        font-size: 3rem;
+        font-weight: bold;
+        position: relative;
+        color: transparent;
+        background: linear-gradient(90deg, #fff, #4facfe, #00f2fe, #fff);
+        background-size: 200% auto;
+        background-clip: text;
+        -webkit-background-clip: text;
+        animation: shine 2s linear infinite;
+      }
+
+      /* 动画关键帧 */
+      @keyframes shine {
+        0% {
+          background-position: -100% center;
+        }
+        100% {
+          background-position: 100% center;
+        }
+      }
+    </style>
+  </body>
+</html>

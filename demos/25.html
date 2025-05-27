@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="liquid-btn">立即加入</button>
+    <style>
+      .liquid-btn {
+        padding: 1em 2.5em;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: white;
+        background: linear-gradient(to right, #43e97b, #38f9d7);
+        border: none;
+        border-radius: 40px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        outline: none;
+      }
+
+      /* 点击时添加 active 动画类 */
+      .liquid-btn:active {
+        animation: liquidBounce 0.6s cubic-bezier(0.25, 1.5, 0.5, 1);
+      }
+
+      /* 回弹动画 */
+      @keyframes liquidBounce {
+        0% {
+          transform: scale(1);
+        }
+        30% {
+          transform: scale(0.9, 1.1);
+        }
+        50% {
+          transform: scale(1.1, 0.9);
+        }
+        70% {
+          transform: scale(0.95, 1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    </style>
+  </body>
+</html>

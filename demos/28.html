@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="glassball" id="glassball"></div>
+    <style>
+      .glassball {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle at 30% 30%,
+          #ffffffaa,
+          #00f2fe44 60%,
+          #00000011 100%
+        );
+        box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3),
+          0 8px 20px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+        transition: background-position 0.1s;
+        margin: 100px auto;
+      }
+    </style>
+    <script>
+      const ball = document.getElementById("glassball");
+
+      ball.addEventListener("mousemove", (e) => {
+        const rect = ball.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        ball.style.background = `radial-gradient(circle at ${x}% ${y}%, #ffffffaa, #00f2fe44 60%, #00000011 100%)`;
+      });
+
+      ball.addEventListener("mouseleave", () => {
+        ball.style.background = `radial-gradient(circle at 30% 30%, #ffffffaa, #00f2fe44 60%, #00000011 100%)`;
+      });
+    </script>
+  </body>
+</html>
